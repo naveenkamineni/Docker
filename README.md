@@ -37,7 +37,7 @@ A **Dockerfile** is a **script** that automates the process of creating a **Dock
 - 📄 **Application files** (HTML, configurations, etc.)
 - 📦 **Libraries & dependencies**
 - 🚪 **Ports** for networking
-- 📂 **Directory structure** where Application files copied inside the container
+- 📂 **Directory structure** inside the container
 - 🎬 **Entry point** to start the container
 
 ---
@@ -96,8 +96,122 @@ sudo systemctl enable docker
 
 ---
 
+## ⬇️ How to Pull an Image from Docker Hub
+To pull an image from Docker Hub, use:
+```bash
+docker pull image-name
+```
+Example:
+```bash
+docker pull nginx
+```
+This command downloads the `nginx` image from Docker Hub to your local machine.
+
+To list all downloaded images:
+```bash
+docker images
+```
+
+---
+
+## 🏗️ How to Build a Docker Image
+To build an image from a Dockerfile, run:
+```bash
+docker build -t my-image-name .
+```
+
+- `-t my-image-name` → Tags the image with a name.
+- `.` → Refers to the current directory where the Dockerfile is located.
+
+---
+
+## ▶️ How to Run a Container from an Image
+To run a container from a Docker image, use:
+```bash
+docker run -d --name my-container my-image-name
+```
+- `-d` → Runs the container in detached mode (background).
+- `--name my-container` → Assigns a name to the container.
+- `my-image-name` → The image to run.
+
+To check running containers:
+```bash
+docker ps
+```
+
+---
+
+## 💾 How to Create a Docker Volume
+To create a volume for persistent storage:
+```bash
+docker volume create my-volume
+```
+To list all volumes:
+```bash
+docker volume ls
+```
+
+---
+
+## 📂 How to Mount a Volume to a Container
+To mount a volume while running a container:
+```bash
+docker run -d --name my-container -v my-volume:/app/data my-image-name
+```
+- `-v my-volume:/app/data` → Maps `my-volume` to `/app/data` inside the container.
+
+---
+
+## 🔍 How to Move into a Running Container
+To open a shell inside a running container:
+```bash
+docker exec -it my-container /bin/bash
+```
+- `-it` → Allows interactive access.
+- `my-container` → The name of the running container.
+- `/bin/bash` → Starts a bash shell inside the container.
+
+To exit the container shell, type:
+```bash
+exit
+```
+
+---
+
+## 🚀 Important Docker Commands
+### 📜 List Docker Images
+```bash
+docker images
+```
+### 📜 List Running Containers
+```bash
+docker ps
+```
+### 📜 List All Containers (Including Stopped)
+```bash
+docker ps -a
+```
+### 🗑️ Remove a Docker Image
+```bash
+docker rmi image-id
+```
+### 🗑️ Remove Multiple Images
+```bash
+docker rmi image-id1 image-id2
+```
+### 🗑️ Remove a Container
+```bash
+docker rm container-id
+```
+### 🗑️ Remove Multiple Containers
+```bash
+docker rm container-id1 container-id2
+```
+
+---
+
 ## 🎯 Conclusion
 Docker simplifies **application deployment** by packaging everything into a **container**. It is widely used for **microservices, cloud deployment, and DevOps**. With Docker, you can ensure **portability, scalability, and efficiency** across different environments.
 
-💡 **Docker Easy!** 🐳🚀
+💡 **Happy Containerizing!** 🐳🚀
 
