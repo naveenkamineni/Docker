@@ -128,7 +128,7 @@ docker build -t my-image-name .
 ## ▶️ How to Run a Container from an Image
 To run a container from a Docker image, use:
 ```bash
-docker run -d --name my-container my-image-name
+docker run -d --name my-container  -p host-port:Application-port my-image-name 
 ```
 - `-d` → Runs the container in detached mode (background).
 - `--name my-container` → Assigns a name to the container.
