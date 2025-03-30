@@ -197,6 +197,10 @@ docker rmi image-id
 ```
 ### 🗑️ Remove Multiple Images
 ```bash
+docker rmi $(docker images -q) -f
+```
+
+```bash
 docker rmi image-id1 image-id2
 ```
 ### 🗑️ Remove a Container
@@ -205,7 +209,10 @@ docker rm container-id
 ```
 ### 🗑️ Remove Multiple Containers
 ```bash
-docker rm container-id1 container-id2
+docker rm $(docker ps -a -q) -f
+``
+```bash
+docker rm container-id1 container-id2 ...
 ```
 
 ---
