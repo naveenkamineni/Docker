@@ -213,5 +213,5 @@ docker rm container-id1 container-id2
 ## 🎯 Conclusion
 Docker simplifies **application deployment** by packaging everything into a **container**. It is widely used for **microservices, cloud deployment, and DevOps**. With Docker, you can ensure **portability, scalability, and efficiency** across different environments.
 
-💡 **Happy Containerizing!** 🐳🚀
+💡 **Docker Easy!** 🐳🚀
 
