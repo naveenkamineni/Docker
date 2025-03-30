@@ -114,6 +114,30 @@ docker images
 
 ---
 
+📝 Example: Writing a Dockerfile for Nginx
+
+A Dockerfile is used to define the environment for your container. Below is an example Dockerfile for running an Nginx web server:
+
+# Use the official Nginx base image
+FROM nginx:latest
+
+# Copy custom static files to Nginx's HTML directory
+COPY index.html /usr/share/nginx/html/
+
+# Expose port 80 to allow traffic
+EXPOSE 80
+
+# Start Nginx when the container starts
+CMD ["nginx", "-g", "daemon off;"]
+
+Steps:
+
+Create a file named Dockerfile (without any extension).
+
+Copy the above content into the file.
+
+Now, you can build an image from this Dockerfile.
+
 ## 🏗️ How to Build a Docker Image
 To build an image from a Dockerfile, run:
 ```bash
