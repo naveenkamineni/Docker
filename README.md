@@ -16,19 +16,19 @@ While Docker is popular, there are some alternatives:
 ---
 
 ## 🔑 Key Docker Terms
-1. 🖼️ **Docker Image**
-2. 📦 **DockerHub / Registry**
-3. 🏗️ **Docker Container**
-4. ⚙️ **Docker Daemon**
-5. ⬇️ **docker pull**
-6. 🏗️ **docker build**
-7. ▶️ **docker run**
-8. 🖥️ **Docker Client**
-9. 🏠 **Docker Host**
-10. 📜 **Dockerfile**
-11. 🔀 **docker-compose**
-12. 💾 **docker volumes**
-13. 🌍 **Docker Swarm**
+1. 🖼️ **Docker Image** - A lightweight, standalone, and executable package that includes everything needed to run an application.
+2. 📦 **DockerHub / Registry** - A cloud-based repository for storing and distributing Docker images.
+3. 🏗️ **Docker Container** - A running instance of a Docker image that includes the application and its dependencies.
+4. ⚙️ **Docker Daemon** - A background service that manages Docker objects such as images, containers, and networks.
+5. ⬇️ **docker pull** - A command used to download images from DockerHub or other registries.
+6. 🏗️ **docker build** - A command used to create a new image from a Dockerfile.
+7. ▶️ **docker run** - A command to start a container from a Docker image.
+8. 🖥️ **Docker Client** - A command-line tool that communicates with the Docker Daemon.
+9. 🏠 **Docker Host** - The machine where Docker Daemon runs and manages containers.
+10. 📜 **Dockerfile** - A script that defines the instructions for building a Docker image.
+11. 🔀 **docker-compose** - A tool used to define and run multi-container Docker applications.
+12. 💾 **docker volumes** - A feature that allows persistent storage for Docker containers.
+13. 🌍 **Docker Swarm** - A native clustering and orchestration tool for managing multiple Docker containers.
 
 ---
 
@@ -37,7 +37,7 @@ A **Dockerfile** is a **script** that automates the process of creating a **Dock
 - 📄 **Application files** (HTML, configurations, etc.)
 - 📦 **Libraries & dependencies**
 - 🚪 **Ports** for networking
-- 📂 **Directory structure** inside the container
+- 📂 **Directory structure** where Application files copied inside the container
 - 🎬 **Entry point** to start the container
 
 ---
@@ -99,5 +99,5 @@ sudo systemctl enable docker
 ## 🎯 Conclusion
 Docker simplifies **application deployment** by packaging everything into a **container**. It is widely used for **microservices, cloud deployment, and DevOps**. With Docker, you can ensure **portability, scalability, and efficiency** across different environments.
 
-💡 **Happy Containerizing!** 🐳🚀
+💡 **Docker Easy!** 🐳🚀
 
