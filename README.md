@@ -114,29 +114,38 @@ docker images
 
 ---
 
-📝 Example: Writing a Dockerfile for Nginx
+## 📝 Example: Writing a Dockerfile for Nginx
 
-A Dockerfile is used to define the environment for your container. Below is an example Dockerfile for running an Nginx web server:
+A **Dockerfile** defines the environment for your container. Below is an example Dockerfile for running an **Nginx web server**:
 
-# Use the official Nginx base image
-FROM nginx:latest
+```dockerfile
+# Use the official Nginx base image  
+FROM nginx:latest  
 
-# Copy custom static files to Nginx's HTML directory
-COPY index.html /usr/share/nginx/html/
+# Copy custom static files to Nginx's HTML directory  
+COPY index.html /usr/share/nginx/html/  
 
-# Expose port 80 to allow traffic
-EXPOSE 80
+# Expose port 80 to allow traffic  
+EXPOSE 80  
 
-# Start Nginx when the container starts
-CMD ["nginx", "-g", "daemon off;"]
+# Start Nginx when the container starts  
+CMD ["nginx", "-g", "daemon off;"]  
+```
 
-Steps:
+### 📌 Steps to Create and Use the Dockerfile:
+1️⃣ **Create a file** named `Dockerfile` (without any extension).  
+2️⃣ **Copy** the above content into the file.  
+3️⃣ **Build an image** from this Dockerfile using:
+   ```bash
+   docker build -t my-nginx .
+   ```
+4️⃣ **Run the container** from the built image:
+   ```bash
+   docker run -d --name my-nginx-container -p 8080:80 my-nginx
+   ```
+   Now, you can access your Nginx server at **http://localhost:8080**! 🚀  
 
-Create a file named Dockerfile (without any extension).
-
-Copy the above content into the file.
-
-Now, you can build an image from this Dockerfile.
+---
 
 ## 🏗️ How to Build a Docker Image
 To build an image from a Dockerfile, run:
@@ -152,52 +161,7 @@ docker build -t my-image-name .
 ## ▶️ How to Run a Container from an Image
 To run a container from a Docker image, use:
 ```bash
-docker run -d --name my-container  -p host-port:Application-port my-image-name 
-```
-- `-d` → Runs the container in detached mode (background).
-- `--name my-container` → Assigns a name to the container.
-- `my-image-name` → The image to run.
-
-To check running containers:
-```bash
-docker ps
-```
-
----
-
-## 💾 How to Create a Docker Volume
-To create a volume for persistent storage:
-```bash
-docker volume create my-volume
-```
-To list all volumes:
-```bash
-docker volume ls
-```
-
----
-
-## 📂 How to Mount a Volume to a Container
-To mount a volume while running a container:
-```bash
-docker run -d --name my-container -v my-volume:/app/data my-image-name
-```
-- `-v my-volume:/app/data` → Maps `my-volume` to `/app/data` inside the container.
-
----
-
-## 🔍 How to Move into a Running Container
-To open a shell inside a running container:
-```bash
-docker exec -it my-container /bin/bash
-```
-- `-it` → Allows interactive access.
-- `my-container` → The name of the running container.
-- `/bin/bash` → Starts a bash shell inside the container.
-
-To exit the container shell, type:
-```bash
-exit
+docker run -d --name my-container -p host-port:Application-port my-image-name
 ```
 
 ---
@@ -211,21 +175,13 @@ docker images
 ```bash
 docker ps
 ```
-### 📜 List All Containers (Including Stopped)
-```bash
-docker ps -a
-```
-### 🗑️ Remove a Docker Image
+### 📜 Remove a Docker Image
 ```bash
 docker rmi image-id
 ```
 ### 🗑️ Remove Multiple Images
 ```bash
 docker rmi $(docker images -q) -f
-```
-
-```bash
-docker rmi image-id1 image-id2
 ```
 ### 🗑️ Remove a Container
 ```bash
@@ -234,9 +190,6 @@ docker rm container-id
 ### 🗑️ Remove Multiple Containers
 ```bash
 docker rm $(docker ps -a -q) -f
-```
-```bash
-docker rm container-id1 container-id2 ...
 ```
 
 ---
