@@ -210,7 +210,7 @@ docker rm container-id
 ### 🗑️ Remove Multiple Containers
 ```bash
 docker rm $(docker ps -a -q) -f
-``
+```
 ```bash
 docker rm container-id1 container-id2 ...
 ```
