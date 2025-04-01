@@ -203,7 +203,7 @@ Here's a well-structured and formatted version of your content for the GitHub RE
 When working with Docker containers, you may need to modify configuration files, monitor logs, or update content without rebuilding the container. Docker volumes allow us to achieve this efficiently.  
 
 ## 📌 Copying a File from the Container to the Host  
-To copy a file from a running container to the host machine, use:  
+To copy a file from a running container to the host machine, use:  This is needed when you wanted to change something in running container. After Copying the copies to the local folder and mount that files to running container like below. If you make changes to the to local file that will reflect to the running container.
 
 ```sh
 winpty docker run --rm -v "//c/Users/kamin/OneDrive/Desktop/mysql-prometheus-grafana/data:/mnt" \
