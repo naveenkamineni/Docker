@@ -1,0 +1,20 @@
+# Base image
+FROM nginx:latest
+
+# Set working directory inside the container
+WORKDIR /usr/share/nginx/html
+
+# Remove default nginx index.html using RUN
+RUN rm -f /usr/share/nginx/html/*
+
+# Copy custom HTML file to nginx html directory
+COPY index.html /usr/share/nginx/html/
+
+# (Optional) Add backup using ADD
+ADD index.html /usr/share/nginx/html/backup.html
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]
